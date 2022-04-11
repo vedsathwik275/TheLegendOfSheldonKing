@@ -980,7 +980,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707183995}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -5.39, y: -0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1000,6 +1000,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   rb: {fileID: 1707183999}
+  isFacingLeft: 0
+  isFacingUp: 0
+  spawnFacingLeft: 0
+  spawnFacingUp: 0
+  facingLeft: {x: 0, y: 0}
+  facingUp: {x: 0, y: 0}
 --- !u!50 &1707183999
 Rigidbody2D:
   serializedVersion: 4

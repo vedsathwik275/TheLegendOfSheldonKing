@@ -421,8 +421,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a6d6c7f234c624aac998e4b688a65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempfloorx: 5
-  tempfloory: 5
+  tempfloorx: 50
+  tempfloory: 50
   generated: 0
   inputx: {fileID: 1355755344}
   inputy: {fileID: 728014559}

@@ -1,0 +1,240 @@
+Using pre-set license
+Built from '2021.1/staging' branch; Version is '2021.1.15f1 (e767a7370072) revision 15165351'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Education; OS build 19042.1348; Version 2009; 64bit' Language: 'en' Physical Memory: 16064 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity 2021.1.15f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/200376926/Documents/TLOSKgit/TheLegendOfSheldonKing/TLOSKg
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+61188
+Successfully changed project path to: C:/Users/200376926/Documents/TLOSKgit/TheLegendOfSheldonKing/TLOSKg
+C:/Users/200376926/Documents/TLOSKgit/TheLegendOfSheldonKing/TLOSKg
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 95.31 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.15f1 (e767a7370072)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity 2021.1.15f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/200376926/Documents/TLOSKgit/TheLegendOfSheldonKing/TLOSKg/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) Iris(R) Xe Graphics (ID=0x9a49)
+    Vendor:   Intel
+    VRAM:     8032 MB
+    Driver:   27.20.100.9030
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity 2021.1.15f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity 2021.1.15f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity 2021.1.15f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56556
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity 2021.1.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001557 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 93.71 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.196 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1197ms)
+		BeginReloadAssembly (51ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (467ms)
+			LoadAssemblies (49ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (169ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (26ms)
+			SetupLoadedEditorAssemblies (220ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (94ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (92ms)
+				ProcessInitializeOnLoadMethodAttributes (27ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006653 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\200376926\Documents\TLOSKgit\TheLegendOfSheldonKing\TLOSKg\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\200376926\Documents\TLOSKgit\TheLegendOfSheldonKing\TLOSKg\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 97.33 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.313 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1314ms)
+		BeginReloadAssembly (159ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (21ms)
+		EndReloadAssembly (1089ms)
+			LoadAssemblies (112ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (340ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (64ms)
+			SetupLoadedEditorAssemblies (480ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (97ms)
+				BeforeProcessingInitializeOnLoad (90ms)
+				ProcessInitializeOnLoadAttributes (267ms)
+				ProcessInitializeOnLoadMethodAttributes (16ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 1.09 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3847 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.7 MB.
+System memory in use after: 142.8 MB.
+
+Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 4292.
+Total: 3.069000 ms (FindLiveObjects: 0.421200 ms CreateObjectMapping: 0.151700 ms MarkObjects: 2.368600 ms  DeleteObjects: 0.125600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Sprites/temptileset.png
+  artifactKey: Guid(80c9ae79ddf7e0b43b4737bb40a37477) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/temptileset.png using Guid(80c9ae79ddf7e0b43b4737bb40a37477) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14a16958fea807cf7bcff80ef45b08d8') in 0.135695 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 50.763664 seconds.
+  path: Assets/TilePalette/New Palette.prefab
+  artifactKey: Guid(b1d3582a2f121b24ab87704b91182a43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TilePalette/New Palette.prefab using Guid(b1d3582a2f121b24ab87704b91182a43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc9fb524eea5fb05b1a6af356dfd7be0') in 0.058982 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 31.393343 seconds.
+  path: Assets/TilePalette/New Palette.prefab
+  artifactKey: Guid(b1d3582a2f121b24ab87704b91182a43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TilePalette/New Palette.prefab using Guid(b1d3582a2f121b24ab87704b91182a43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fcc8fe44817967641abfe2fbec73885') in 0.042837 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000466 seconds.
+  path: Assets/TilePalette/temptileset_16.asset
+  artifactKey: Guid(c61d5f06f73ea0849aee61f1a67b62f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TilePalette/temptileset_16.asset using Guid(c61d5f06f73ea0849aee61f1a67b62f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cc3e7736a294b1d9b40937c4a56f457') in 0.015190 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000509 seconds.
+  path: Assets/TilePalette/temptileset_15.asset
+  artifactKey: Guid(ce358ff9cbf8faa408ff84778399d6de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TilePalette/temptileset_15.asset using Guid(ce358ff9cbf8faa408ff84778399d6de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00e206ba46ba19ae019c0614fece10c5') in 0.009071 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000412 seconds.
+  path: Assets/TilePalette/temptileset_6.asset
+  artifactKey: Guid(364fec267c430304e833455e64a9be8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TilePalette/temptileset_6.asset using Guid(364fec267c430304e833455e64a9be8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c39a0d8d9d31007246292985bebb5b16') in 0.007600 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000367 seconds.
+  path: Assets/TilePalette/temptileset_5.asset
+  artifactKey: Guid(9e6d4dd53e1ca3d44bcc42b959e4c27d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TilePalette/temptileset_5.asset using Guid(9e6d4dd53e1ca3d44bcc42b959e4c27d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '050a4af9b088ba849ef7310c78fa2afe') in 0.008658 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000449 seconds.
+  path: Assets/TilePalette/temptileset_17.asset
+  artifactKey: Guid(41e502818381ed74d925d7fee6bbb39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TilePalette/temptileset_17.asset using Guid(41e502818381ed74d925d7fee6bbb39a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b9c45017627bb47790415577824030b') in 0.009999 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000406 seconds.
+  path: Assets/TilePalette/temptileset_7.asset
+  artifactKey: Guid(b6f58a3808ab26e42bb9238e0a6dfbc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TilePalette/temptileset_7.asset using Guid(b6f58a3808ab26e42bb9238e0a6dfbc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8df3cd7b6f7720d48cad597ee0bcfe4a') in 0.008644 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000358 seconds.
+  path: Assets/TilePalette/temptileset_12.asset
+  artifactKey: Guid(9290933dad357d14683ee2b0a5a49f97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TilePalette/temptileset_12.asset using Guid(9290933dad357d14683ee2b0a5a49f97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15cf03f06c851caa4d89ddb54b55ae61') in 0.008027 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000348 seconds.
+  path: Assets/TilePalette/temptileset_18.asset
+  artifactKey: Guid(a5644af89b491a1488eca738dcee560a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TilePalette/temptileset_18.asset using Guid(a5644af89b491a1488eca738dcee560a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ffaf31c0afc176844291a73cf505a1f') in 0.007789 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000440 seconds.
+  path: Assets/TilePalette/temptileset_8.asset
+  artifactKey: Guid(fcf5a8b4495369648b33ed60893aae9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TilePalette/temptileset_8.asset using Guid(fcf5a8b4495369648b33ed60893aae9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ec013a62fd82fb1647730756296f5b9') in 0.007873 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000369 seconds.
+  path: Assets/TilePalette/temptileset_10.asset
+  artifactKey: Guid(11f5a7c7467657743a3cb4985df7e56b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TilePalette/temptileset_10.asset using Guid(11f5a7c7467657743a3cb4985df7e56b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '730b98e527a78dc4c7a2d8a53d4cf462') in 0.007553 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000405 seconds.
+  path: Assets/TilePalette/temptileset_13.asset
+  artifactKey: Guid(594b33867145b6c45a0a0b8774215f5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TilePalette/temptileset_13.asset using Guid(594b33867145b6c45a0a0b8774215f5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f3c20d909d147715549f47a66048858') in 0.008079 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000506 seconds.
+  path: Assets/TilePalette/temptileset_19.asset
+  artifactKey: Guid(4a2d2870a08a0ff4caae5a418c4d6a4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TilePalette/temptileset_19.asset using Guid(4a2d2870a08a0ff4caae5a418c4d6a4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddf6e2e6f78b0d423ce68913fca562e7') in 0.006939 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000356 seconds.
+  path: Assets/TilePalette/temptileset_9.asset
+  artifactKey: Guid(718b83872e160bb41879bb37f40fbbdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TilePalette/temptileset_9.asset using Guid(718b83872e160bb41879bb37f40fbbdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bdd4610a48096a119e7ce67330697e7') in 0.007551 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000411 seconds.
+  path: Assets/TilePalette/temptileset_11.asset
+  artifactKey: Guid(5a46cdeb73c44b740b7d4093fb1ef260) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TilePalette/temptileset_11.asset using Guid(5a46cdeb73c44b740b7d4093fb1ef260) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e90a143cef02d6031cea6b3d4657aa2c') in 0.008386 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000339 seconds.
+  path: Assets/TilePalette/temptileset_14.asset
+  artifactKey: Guid(7a692174362d81f4cb6ba1193f40e1bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TilePalette/temptileset_14.asset using Guid(7a692174362d81f4cb6ba1193f40e1bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bbf3f1321496fb532ef7400a452e95c') in 0.009321 seconds 

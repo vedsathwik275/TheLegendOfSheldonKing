@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random=UnityEngine.Random;
 using UnityEngine.UI;
-using System.Text;
 
 
 
@@ -430,7 +429,8 @@ public class WFC : MonoBehaviour
         level1 = new Floor(tempfloory, tempfloorx);
         level1.generate();
         Paint(level1);
-        PaintRaw(level1);
+
+
     }
 
 
@@ -488,52 +488,6 @@ public class WFC : MonoBehaviour
                 }
             }
         }
-    }
-
-    public void PaintRaw(Floor floor)
-    {
-        StringBuilder sb = new StringBuilder();
-        for (int y = 0; y < floor.sizeY; y++)
-        {
-            for (int x = 0; x < floor.sizeX; x++)
-            {
-                Node n = floor.grid[y, x];
-                switch (n.type)
-                {
-                    case "null":
-                        sb.Append("2");
-                        sb.Append(" ");
-                        break;
-
-                    case "voidTile":
-                        sb.Append("2");
-                        sb.Append(" ");
-                        break;
-
-                    case "hardStoneTile":
-                        sb.Append("1");
-                        sb.Append(" ");
-                        break;
-
-                    case "lavaTile":
-                        sb.Append("0");
-                        sb.Append(" ");
-                        break;
-
-                    case "stoneTile":
-                        sb.Append("3");
-                        sb.Append(" ");
-                        break;
-
-                    case "dirtTile":
-                        sb.Append("4");
-                        sb.Append(" ");
-                        break;
-                }
-            }
-            sb.AppendLine();
-        }
-        Debug.Log(sb.ToString());
     }
 }
 

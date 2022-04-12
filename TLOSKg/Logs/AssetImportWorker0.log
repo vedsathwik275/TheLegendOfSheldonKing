@@ -754,3 +754,15 @@ Received Import Request.
   path: Assets/CodeMonkey
   artifactKey: Guid(16b451a71f8c5644886a3d83a5a80de7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/CodeMonkey using Guid(16b451a71f8c5644886a3d83a5a80de7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1832475f8db39e08af1d805d110b84bd') in 0.034999 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 109.674821 seconds.
+  path: Assets/Sprites/Enemy1.png
+  artifactKey: Guid(a6387f41a7bb4eb47b5c1dc326848d2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Enemy1.png using Guid(a6387f41a7bb4eb47b5c1dc326848d2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6910be9fffac1ad5f159a08b21145da9') in 0.211887 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000765 seconds.
+  path: Assets/Sprites/Spaceman.png
+  artifactKey: Guid(5536401587252074e8b0db4b4e1e0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Spaceman.png using Guid(5536401587252074e8b0db4b4e1e0649) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc74fd803e4e173f95fd94a0c48b0481') in 0.058812 seconds 

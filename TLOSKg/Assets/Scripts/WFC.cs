@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random=UnityEngine.Random;
+using Random = UnityEngine.Random;
 using UnityEngine.UI;
 
 
@@ -36,7 +36,7 @@ public class Node
     {
         posx = xVal;
         posy = yVal;
-        string[] allTiles = { "voidTile", "lavaTile", "dirtTile", "stoneTile", "hardStoneTile" };
+        string[] allTiles = { "voidTile", "lavaTile", "dirtTile", "stoneTile", "hardStoneTile", "TNT", "diamondTile", "plantTile", "emeraldTile", "blackTreeTile", "whiteTreeTile", "blueTreeTile", "keyStoneTile", "stoneDotTile", "hStoneTile", "goldTile" };
         collapsed = false;
         type = null;
         allPoss = new HashSet<string>(allTiles);
@@ -50,7 +50,9 @@ public class Node
 
         cellList = new TemplateKeys();
         cellList.InitializeCells();
+
     }
+
     public void updateAdjacency()
     {
         possibleUp = new HashSet<string>();
@@ -93,16 +95,16 @@ public class Node
         entropy = allPoss.Count;
         Debug.Log("Type Pick Count");
         Debug.Log(allPoss.Count);
-        int rnd = Random.Range(0,entropy);
+        int rnd = Random.Range(0, entropy);
         Debug.Log("Type Pick");
         Debug.Log(rnd);
         List<string> tempArray = new List<string>(allPoss);
         type = tempArray[rnd];
-        collapsed = true;    
+        collapsed = true;
         allPoss.Clear();
         allPoss.Add(type);
         entropy = allPoss.Count;
-        
+
     }
 }
 //Tile template which we'll put inside of a dictionary. Contains each of our tiles' program data, like rules and indentifiers and such
@@ -132,7 +134,7 @@ public class Floor
     //TotalNodes is propably redundant but I see myself using it in the future in generate function
     int totalNodes;
     public Node[,] grid;
-    public Text helpertext = GameObject.Find ("Text").GetComponent<Text>();
+    public Text helpertext = GameObject.Find("Text").GetComponent<Text>();
 
     //Why do we need a constructor? Because we need multiple levels. It takes in 2 vars for the size. It also takes grid but It does this because I was having a reference error
     //What might end up happening is that I'll remove the grid paramater and just make grid a variable within the floor class
@@ -159,7 +161,7 @@ public class Floor
         }
     }
 
-        //Propagate: The following text is taken straight from my notepad
+    //Propagate: The following text is taken straight from my notepad
     //get floor and node location
     //take allPoss possibilities set from node
     //create 4 temporary neighboorrules hashsets 
@@ -180,7 +182,7 @@ public class Floor
         TemplateKeys tempkeys = new TemplateKeys();
         tempkeys.InitializeCells();
         //fill new temp hashs with rules of the superposition
-        foreach(string pos in grid[y,x].allPoss)
+        foreach (string pos in grid[y, x].allPoss)
         {
             tempUp.UnionWith(tempkeys.cellTypes[pos].possibleUp);
             tempDown.UnionWith(tempkeys.cellTypes[pos].possibleDown);
@@ -189,53 +191,57 @@ public class Floor
 
         }
         //check to see if ajacent tiles are within bounds first in order up down right left
-        if (y+1 >= sizeY) {changeup = false;}
-        if (y-1 < 0) {changedown = false;}
-        if (x+1 >= sizeX) {changer = false;}
-        if (x-1 < 0) {changel = false;}
+        if (y + 1 >= sizeY) { changeup = false; }
+        if (y - 1 < 0) { changedown = false; }
+        if (x + 1 >= sizeX) { changer = false; }
+        if (x - 1 < 0) { changel = false; }
         //for each variable, if it is true, go to the node in the respective direction and change its superposition then update ajacency
         if (changeup)
         {
-            if (!grid[y+1,x].collapsed)
+            if (!grid[y + 1, x].collapsed)
             {
-                grid[y+1,x].allPoss.IntersectWith(tempUp);
-                grid[y+1,x].updateAdjacency();
-                if(grid[y+1,x].allPoss.Count == 0){
-                    grid[y+1,x].allPoss.Add("voidTile");
+                grid[y + 1, x].allPoss.IntersectWith(tempUp);
+                grid[y + 1, x].updateAdjacency();
+                if (grid[y + 1, x].allPoss.Count == 0)
+                {
+                    grid[y + 1, x].allPoss.Add("voidTile");
                 }
             }
         }
         if (changedown)
         {
-            if(!grid[y-1,x].collapsed)
+            if (!grid[y - 1, x].collapsed)
             {
-                grid[y-1,x].allPoss.IntersectWith(tempDown);
-                grid[y-1,x].updateAdjacency();
-                if(grid[y-1,x].allPoss.Count == 0){
-                    grid[y-1,x].allPoss.Add("voidTile");
-                }                
+                grid[y - 1, x].allPoss.IntersectWith(tempDown);
+                grid[y - 1, x].updateAdjacency();
+                if (grid[y - 1, x].allPoss.Count == 0)
+                {
+                    grid[y - 1, x].allPoss.Add("voidTile");
+                }
             }
         }
         if (changer)
         {
-            if(!grid[y,x+1].collapsed)
+            if (!grid[y, x + 1].collapsed)
             {
-                grid[y,x+1].allPoss.IntersectWith(tempR);
-                grid[y,x+1].updateAdjacency();
-                if(grid[y,x+1].allPoss.Count == 0){
-                    grid[y,x+1].allPoss.Add("voidTile");
-                }                
+                grid[y, x + 1].allPoss.IntersectWith(tempR);
+                grid[y, x + 1].updateAdjacency();
+                if (grid[y, x + 1].allPoss.Count == 0)
+                {
+                    grid[y, x + 1].allPoss.Add("voidTile");
+                }
             }
         }
         if (changel)
         {
-            if(!grid[y,x-1].collapsed)
+            if (!grid[y, x - 1].collapsed)
             {
-                grid[y,x-1].allPoss.IntersectWith(tempL);
-                grid[y,x-1].updateAdjacency();
-                if(grid[y,x-1].allPoss.Count == 0){
-                    grid[y,x-1].allPoss.Add("voidTile");
-                }                
+                grid[y, x - 1].allPoss.IntersectWith(tempL);
+                grid[y, x - 1].updateAdjacency();
+                if (grid[y, x - 1].allPoss.Count == 0)
+                {
+                    grid[y, x - 1].allPoss.Add("voidTile");
+                }
             }
         }
 
@@ -243,34 +249,34 @@ public class Floor
     //Helper function. Takes most of the info about a node and puts it into a string which can be either printed to console or put onto a text message in game
     public void DumpNode(int x, int y)
     {
-        int dumpposx = grid[y,x].posx;
-        int dumpposy = grid[y,x].posy;
-        int order = grid[y,x].sequence;
-        bool colstatus = grid[y,x].collapsed;
+        int dumpposx = grid[y, x].posx;
+        int dumpposy = grid[y, x].posy;
+        int order = grid[y, x].sequence;
+        bool colstatus = grid[y, x].collapsed;
         string super = "Possibilities: ";
-        string type = grid[y,x].type;
+        string type = grid[y, x].type;
         string rulesup = "Tiles that can go above this: ";
         string rulesdown = "Tiles that can go below this: ";
         string rulesleft = "Tiles that can go left of this: ";
         string rulesright = "Tiles that can go to the right of: ";
 
-        foreach(string pos in grid[y,x].allPoss)
+        foreach (string pos in grid[y, x].allPoss)
         {
             super = super + pos + ", ";
         }
-        foreach(string pos in grid[y,x].possibleUp)
+        foreach (string pos in grid[y, x].possibleUp)
         {
             rulesup = rulesup + pos + ", ";
         }
-        foreach(string pos in grid[y,x].possibleDown)
+        foreach (string pos in grid[y, x].possibleDown)
         {
             rulesdown = rulesdown + pos + ", ";
         }
-        foreach(string pos in grid[y,x].possibleL)
+        foreach (string pos in grid[y, x].possibleL)
         {
             rulesleft = rulesleft + pos + ", ";
         }
-        foreach(string pos in grid[y,x].possibleR)
+        foreach (string pos in grid[y, x].possibleR)
         {
             rulesright = rulesright + pos + ", ";
         }
@@ -287,37 +293,38 @@ public class Floor
         {
             for (int x = 0; x < sizeX; x++)
             {
-                grid[y,x].Collapse();
-                grid[y,x].updateAdjacency();
+                grid[y, x].Collapse();
+                grid[y, x].updateAdjacency();
             }
         }
     }
     //wfc generate
     public void generate()
     {
-        
+
         int complete = 0;
         List<Node> lowestents = new List<Node>();
         int lowestent = 99;
 
         Queue<Node> dirty = new Queue<Node>();
-        while (complete<totalNodes){
-            for(int y = 0; y < sizeY; y++)
+        while (complete < totalNodes)
+        {
+            for (int y = 0; y < sizeY; y++)
             {
                 for (int x = 0; x < sizeX; x++)
                 {
-                    
+
                     //essentially, find a node with a low entropy. If it is lower than current low, clear list of low entropy nodes
                     //and start a new list with that node. If nodes have the same value, add to the list
-                    if (grid[y,x].entropy < lowestent && !grid[y,x].collapsed)
+                    if (grid[y, x].entropy < lowestent && !grid[y, x].collapsed)
                     {
-                        lowestent = grid[y,x].entropy;
+                        lowestent = grid[y, x].entropy;
                         lowestents.Clear();
-                        lowestents.Add(grid[y,x]);
+                        lowestents.Add(grid[y, x]);
                     }
-                    else if (grid[y,x].entropy == lowestent && !grid[y,x].collapsed)
+                    else if (grid[y, x].entropy == lowestent && !grid[y, x].collapsed)
                     {
-                        lowestents.Add(grid[y,x]);
+                        lowestents.Add(grid[y, x]);
                     }
 
 
@@ -327,7 +334,7 @@ public class Floor
             Debug.Log("Tile Pick Size");
             Debug.Log(lowestents.Count);
             int tocollapse = lowestents.Count;
-            int rndm = Random.Range(0,tocollapse);
+            int rndm = Random.Range(0, tocollapse);
             Debug.Log("Tile Pick");
             Debug.Log(rndm);
             grid[lowestents[rndm].posy, lowestents[rndm].posx].Collapse();
@@ -337,7 +344,7 @@ public class Floor
             grid[lowestents[rndm].posy, lowestents[rndm].posx].sequence = complete;
             lowestent = 99;
             lowestents.Clear();
-            
+
         }
     }
 }
@@ -358,7 +365,7 @@ public class TemplateKeys
         cellWeights.Add("lavaTile", lavaWeight);
         cellWeights.Add("dirtTile", dirtWeight);
 
-        string[] allStone = { "stoneTile", "hardStoneTile", "dirtTile" };   //stone
+        string[] allStone = { "stoneTile", "hardStoneTile", "dirtTile", "diamondTile", "plantTile", "emeraldTile", "blackTreeTile", "whiteTreeTile", "blueTreeTile", "keyStoneTile", "stoneDotTile", "hStoneTile", "goldTile" };   //stone
         TileTemplate stoneTile = new TileTemplate
         ("stoneTile",
          new HashSet<string>(allStone),
@@ -367,7 +374,7 @@ public class TemplateKeys
          new HashSet<string>(allStone));
         cellTypes.Add(stoneTile.name, stoneTile);
 
-        string[] allVoid = { "voidTile", "hardStoneTile" };   //void
+        string[] allVoid = { "voidTile", "hardStoneTile", "TNT" };   //void
         TileTemplate voidTile = new TileTemplate
         ("voidTile",
          new HashSet<string>(allVoid),
@@ -376,7 +383,7 @@ public class TemplateKeys
          new HashSet<string>(allVoid));
         cellTypes.Add(voidTile.name, voidTile);
 
-        string[] allHardStone = { "voidTile", "stoneTile", "hardStoneTile", "lavaTile"};   //hardStone
+        string[] allHardStone = { "voidTile", "stoneTile", "hardStoneTile", "lavaTile", "TNT", "stoneDotTile", "hStoneTile", "goldTile" };   //hardStone
         TileTemplate hardStoneTile = new TileTemplate
         ("hardStoneTile",
          new HashSet<string>(allHardStone),
@@ -385,7 +392,7 @@ public class TemplateKeys
          new HashSet<string>(allHardStone));
         cellTypes.Add(hardStoneTile.name, hardStoneTile);
 
-        string[] allLava = { "hardStoneTile", "lavaTile"};   //lavaTile
+        string[] allLava = { "hardStoneTile", "lavaTile", "TNT" };   //lavaTile
         TileTemplate lavaTile = new TileTemplate
         ("lavaTile",
          new HashSet<string>(allLava),
@@ -394,7 +401,7 @@ public class TemplateKeys
          new HashSet<string>(allLava));
         cellTypes.Add(lavaTile.name, lavaTile);
 
-        string[] allDirt = { "stoneTile", "dirtTile" };   //dirtTile
+        string[] allDirt = { "stoneTile", "dirtTile", "diamondTile", "emeraldTile", "blackTreeTile", "whiteTreeTile", "blueTreeTile", "keyStoneTile", "goldTile" };   //dirtTile
         TileTemplate dirtTile = new TileTemplate
         ("dirtTile",
          new HashSet<string>(allDirt),
@@ -402,6 +409,105 @@ public class TemplateKeys
          new HashSet<string>(allDirt),
          new HashSet<string>(allDirt));
         cellTypes.Add(dirtTile.name, dirtTile);
+
+        string[] allTNT = { "hardStoneTile", "lavalTile", "TNT", "voidTile" };   //tnt
+        TileTemplate tntTile = new TileTemplate
+        ("TNT",
+         new HashSet<string>(allTNT),
+         new HashSet<string>(allTNT),
+         new HashSet<string>(allTNT),
+         new HashSet<string>(allTNT));
+        cellTypes.Add(tntTile.name, tntTile);
+
+        string[] allDiamond = { "stoneTile", "hardStoneTile", "dirtTile", "plantTile", "blackTreeTile" };   //diamond
+        TileTemplate diamondTile = new TileTemplate
+        ("diamondTile",
+         new HashSet<string>(allDiamond),
+         new HashSet<string>(allDiamond),
+         new HashSet<string>(allDiamond),
+         new HashSet<string>(allDiamond));
+        cellTypes.Add(diamondTile.name, diamondTile);
+
+        string[] allPlant = { "stoneTile", "dirtTile", "plantTile", "blackTreeTile", "whiteTreeTile", "blueTreeTile" };   //plant
+        TileTemplate plantTile = new TileTemplate
+        ("plantTile",
+         new HashSet<string>(allPlant),
+         new HashSet<string>(allPlant),
+         new HashSet<string>(allPlant),
+         new HashSet<string>(allPlant));
+        cellTypes.Add(plantTile.name, plantTile);
+
+        string[] allEmerald = { "stoneTile", "hardStoneTile", "dirtTile", "plantTile", "whiteTreeTile" };   //emerald
+        TileTemplate emeraldTile = new TileTemplate
+        ("emeraldTile",
+         new HashSet<string>(allEmerald),
+         new HashSet<string>(allEmerald),
+         new HashSet<string>(allEmerald),
+         new HashSet<string>(allEmerald));
+        cellTypes.Add(emeraldTile.name, emeraldTile);
+
+        string[] allBlackTree = { "stoneTile", "hardStoneTile", "dirtTile", "plantTile", "blackTreeTile", "whiteTreeTile", "blueTreeTile" };   //blackTree
+        TileTemplate blackTreeTile = new TileTemplate
+        ("blackTreeTile",
+         new HashSet<string>(allBlackTree),
+         new HashSet<string>(allBlackTree),
+         new HashSet<string>(allBlackTree),
+         new HashSet<string>(allBlackTree));
+        cellTypes.Add(blackTreeTile.name, blackTreeTile);
+
+        string[] allWhiteTree = { "stoneTile", "hardStoneTile", "dirtTile", "plantTile", "blackTreeTile", "whiteTreeTile", "blueTreeTile" };   //whiteTree
+        TileTemplate whiteTreeTile = new TileTemplate
+        ("whiteTreeTile",
+         new HashSet<string>(allWhiteTree),
+         new HashSet<string>(allWhiteTree),
+         new HashSet<string>(allWhiteTree),
+         new HashSet<string>(allWhiteTree));
+        cellTypes.Add(whiteTreeTile.name, whiteTreeTile);
+
+        string[] allBlueTree = { "stoneTile", "hardStoneTile", "dirtTile", "plantTile", "blackTreeTile", "whiteTreeTile", "blueTreeTile" };   //blueTree
+        TileTemplate blueTreeTile = new TileTemplate
+        ("blueTreeTile",
+         new HashSet<string>(allBlueTree),
+         new HashSet<string>(allBlueTree),
+         new HashSet<string>(allBlueTree),
+         new HashSet<string>(allBlueTree));
+        cellTypes.Add(blueTreeTile.name, blueTreeTile);
+
+        string[] allKeyStoneTile = { "stoneTile", "hardStoneTile", "dirtTile", "keyStoneTile" };   //keyStone
+        TileTemplate keyStoneTile = new TileTemplate
+        ("keyStoneTile",
+         new HashSet<string>(allKeyStoneTile),
+         new HashSet<string>(allKeyStoneTile),
+         new HashSet<string>(allKeyStoneTile),
+         new HashSet<string>(allKeyStoneTile));
+        cellTypes.Add(keyStoneTile.name, keyStoneTile);
+
+        string[] allStoneDot = { "stoneTile", "hardStoneTile", "dirtTile", "stoneDotTile" };   //stoneDot
+        TileTemplate stoneDotTile = new TileTemplate
+        ("stoneDotTile",
+         new HashSet<string>(allStoneDot),
+         new HashSet<string>(allStoneDot),
+         new HashSet<string>(allStoneDot),
+         new HashSet<string>(allStoneDot));
+        cellTypes.Add(stoneDotTile.name, stoneDotTile);
+
+        string[] allHStoneDot = { "stoneTile", "hardStoneTile", "dirtTile", "hStoneTile", "lavaTile", "TNT" };   //hStoneDot
+        TileTemplate hStoneDotTile = new TileTemplate
+        ("hStoneTile",
+         new HashSet<string>(allHStoneDot),
+         new HashSet<string>(allHStoneDot),
+         new HashSet<string>(allHStoneDot),
+         new HashSet<string>(allHStoneDot));
+        cellTypes.Add(hStoneDotTile.name, hStoneDotTile);
+
+        string[] allGold = { "stoneTile", "hardStoneTile", "dirtTile", "plantTile", "blueTreeTile" };   //gold
+        TileTemplate goldTile = new TileTemplate
+        ("goldTile",
+         new HashSet<string>(allGold),
+         new HashSet<string>(allGold),
+         new HashSet<string>(allGold),
+         new HashSet<string>(allGold));
+        cellTypes.Add(goldTile.name, goldTile);
     }
 }
 
@@ -442,7 +548,7 @@ public class WFC : MonoBehaviour
     //Uses dumpnode function basically. Reason this is here is so I could attach to the button
     public void testdump()
     {
-        level1.DumpNode(peekx,peeky);
+        level1.DumpNode(peekx, peeky);
     }
     //Function I made that updates peek values. Attached this to input fields so you could enter in which tile you wanted to peek
     public void updateTestValues()
@@ -451,7 +557,7 @@ public class WFC : MonoBehaviour
         peeky = Int32.Parse(inputy.GetComponent<InputField>().text);
     }
 
-    
+
     //This function basically takes the floor class, accesses the grid and picks out every node and instantiates a tile in the node's place based on its label
     public void Paint(Floor floor)
     {
@@ -484,6 +590,39 @@ public class WFC : MonoBehaviour
 
                     case "dirtTile":
                         Instantiate(tiles[4], new Vector3(n.posx, n.posy, 0), tiles[2].transform.rotation);
+                        break;
+                    case "TNT":
+                        Instantiate(tiles[5], new Vector3(n.posx, n.posy, 0), tiles[3].transform.rotation);
+                        break;
+                    case "diamondTile":
+                        Instantiate(tiles[6], new Vector3(n.posx, n.posy, 0), tiles[3].transform.rotation);
+                        break;
+                    case "plantTile":
+                        Instantiate(tiles[7], new Vector3(n.posx, n.posy, 0), tiles[3].transform.rotation);
+                        break;
+                    case "emeraldTile":
+                        Instantiate(tiles[8], new Vector3(n.posx, n.posy, 0), tiles[3].transform.rotation);
+                        break;
+                    case "blackTreeTile":
+                        Instantiate(tiles[9], new Vector3(n.posx, n.posy, 0), tiles[3].transform.rotation);
+                        break;
+                    case "whiteTreeTile":
+                        Instantiate(tiles[10], new Vector3(n.posx, n.posy, 0), tiles[3].transform.rotation);
+                        break;
+                    case "blueTreeTile":
+                        Instantiate(tiles[11], new Vector3(n.posx, n.posy, 0), tiles[3].transform.rotation);
+                        break;
+                    case "keyStoneTile":
+                        Instantiate(tiles[12], new Vector3(n.posx, n.posy, 0), tiles[3].transform.rotation);
+                        break;
+                    case "stoneDotTile":
+                        Instantiate(tiles[12], new Vector3(n.posx, n.posy, 0), tiles[3].transform.rotation);
+                        break;
+                    case "hStoneTile":
+                        Instantiate(tiles[13], new Vector3(n.posx, n.posy, 0), tiles[3].transform.rotation);
+                        break;
+                    case "goldTile":
+                        Instantiate(tiles[13], new Vector3(n.posx, n.posy, 0), tiles[3].transform.rotation);
                         break;
                 }
             }

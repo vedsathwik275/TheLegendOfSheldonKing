@@ -456,10 +456,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a6d6c7f234c624aac998e4b688a65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
   tempfloorx: 50
   tempfloory: 50
-  
   generated: 0
   inputx: {fileID: 1355755344}
   inputy: {fileID: 728014559}
@@ -471,7 +469,6 @@ MonoBehaviour:
   - {fileID: 213520349844102940, guid: 7582dde107c9f35459789c783b78c23b, type: 3}
   - {fileID: 6457206023808109344, guid: 99fef2fb291ab254ba6861ea85074b5c, type: 3}
   - {fileID: 8984575126862717347, guid: 1ac572e0100a204479c9433829a976fa, type: 3}
-
   helptext: {fileID: 375150372}
 --- !u!1 &565133472
 GameObject:
@@ -1705,7 +1702,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   rb: {fileID: 1750768006}
-
   isFacingLeft: 0
   isFacingUp: 0
   spawnFacingLeft: 0

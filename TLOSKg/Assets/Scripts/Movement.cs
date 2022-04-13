@@ -7,9 +7,14 @@ public class Movement : MonoBehaviour
 {
     public float moveSpeed;
     public Rigidbody2D rb;
+    public GameObject SpawnPoint;
 
     Vector2 input;
 
+    public float health;
+    public float digSpeed;
+    public float score;
+    public float fuel;
 
     [HideInInspector]
     public bool isFacingLeft;

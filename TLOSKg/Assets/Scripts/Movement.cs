@@ -25,6 +25,8 @@ public class Movement : MonoBehaviour
     public bool spawnFacingUp;
     public Vector2 facingLeft;
     public Vector2 facingUp;
+
+    public bool isWantUp = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -101,13 +103,16 @@ public class Movement : MonoBehaviour
     }
     private void FlipV()
     {
-        if (isFacingUp)
+        if (isWantUp)
         {
-            transform.localScale = facingUp;
-        }
-        if (!isFacingUp)
-        {
-            transform.localScale = new Vector2(transform.localScale.x, -transform.localScale.y);
+            if (isFacingUp)
+            {
+                transform.localScale = facingUp;
+            }
+            if (!isFacingUp)
+            {
+                transform.localScale = new Vector2(transform.localScale.x, -transform.localScale.y);
+            }
         }
     }
 }

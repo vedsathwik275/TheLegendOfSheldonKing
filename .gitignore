@@ -75,3 +75,4 @@ crashlytics-build.properties
 *.log
 *.log
 TLOSKg/Logs/shadercompiler-UnityShaderCompiler.exe1.log
+*.zip

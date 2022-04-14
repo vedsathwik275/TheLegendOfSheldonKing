@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3079572143700543507}
   - component: {fileID: 1053519548457178871}
+  - component: {fileID: 5911854226689620005}
   m_Layer: 0
   m_Name: BlueTree
   m_TagString: Untagged
@@ -83,3 +84,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &5911854226689620005
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5599336158990316786}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.75102335, y: 0.62807196, z: 0.2}
+  m_Center: {x: 0.004610628, y: -0.18596402, z: 0}

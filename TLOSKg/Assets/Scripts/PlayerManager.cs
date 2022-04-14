@@ -32,5 +32,27 @@ public class PlayerManager : MonoBehaviour
         {
             SceneManager.LoadScene("FifteenByFifteen");
         }
+
+        // if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+        // {
+        //     if (other.gameObject.tag == "block")
+        //     {
+        //         Debug.Log("Destroy");
+        //         Destroy(other.gameObject);
+        //     }
+        // }
     }
+
+    /*Drill
+        on collision(col2d other)
+            if input arrow key down or s (down)
+                check collision
+                    destroy(other)
+            if input arrow key left or a (left)
+                check collision
+                    destroy(other)
+            if input arrow key right or d (right)
+                check collision
+                    destroy(other)*/
+
 }

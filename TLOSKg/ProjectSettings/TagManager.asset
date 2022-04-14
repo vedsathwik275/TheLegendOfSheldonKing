@@ -8,6 +8,7 @@ TagManager:
   - five
   - ten
   - fifteen
+  - block
   layers:
   - Default
   - TransparentFX

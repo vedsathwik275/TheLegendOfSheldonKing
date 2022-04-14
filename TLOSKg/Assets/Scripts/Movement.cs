@@ -8,13 +8,18 @@ public class Movement : MonoBehaviour
     public float moveSpeed;
     public Rigidbody2D rb;
     public GameObject SpawnPoint;
+    public GameObject Drill;
 
     Vector2 input;
 
-    public float health;
-    public float digSpeed;
-    public float score;
-    public float fuel;
+    public float health = 0;
+    public float digSpeed = 0;
+    public float score = 0;
+    public float fuel = 0;
+    public float starthp;
+    public float startdig;
+    public float startfuel;
+
 
     [HideInInspector]
     public bool isFacingLeft;
@@ -25,11 +30,13 @@ public class Movement : MonoBehaviour
     public bool spawnFacingUp;
     public Vector2 facingLeft;
     public Vector2 facingUp;
-
-    public bool isWantUp = false;
     // Start is called before the first frame update
     void Start()
     {
+        health = starthp;
+        digSpeed = startdig;
+        fuel = startfuel;
+
         facingLeft = new Vector2(-transform.localScale.x, transform.localScale.y);
         facingUp = new Vector2(transform.localScale.x, transform.localScale.y);
         if (spawnFacingLeft)
@@ -66,7 +73,14 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = input * moveSpeed;
+        if (input.y > 0)
+        {
+            rb.velocity = input * 0;
+        }
+        else
+        {
+            rb.velocity = input * moveSpeed;
+        }
 
         if (input.x > 0 && isFacingLeft)
         {
@@ -78,15 +92,13 @@ public class Movement : MonoBehaviour
             isFacingLeft = true;
             FlipH();
         }
-        if (input.y > 0 && !isFacingUp)
+        if (input.y >= 0 && !isFacingUp)
         {
-            isFacingUp = true;
-            FlipV();
+            //turn drill off
         }
-        if (input.y < 0 && isFacingUp)
+        if (input.y < 0)
         {
-            isFacingUp = false;
-            FlipV();
+            //turn drill on
         }
     }
 
@@ -103,16 +115,13 @@ public class Movement : MonoBehaviour
     }
     private void FlipV()
     {
-        if (isWantUp)
+        if (isFacingUp)
         {
-            if (isFacingUp)
-            {
-                transform.localScale = facingUp;
-            }
-            if (!isFacingUp)
-            {
-                transform.localScale = new Vector2(transform.localScale.x, -transform.localScale.y);
-            }
+            transform.localScale = facingUp;
+        }
+        if (!isFacingUp)
+        {
+            transform.localScale = new Vector2(transform.localScale.x, -transform.localScale.y);
         }
     }
 }

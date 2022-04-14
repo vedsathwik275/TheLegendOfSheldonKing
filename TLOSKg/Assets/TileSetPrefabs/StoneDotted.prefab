@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4357177680047902293}
   - component: {fileID: 1483194421654513009}
   - component: {fileID: 254144080426588792}
+  - component: {fileID: -4771364992317668262}
   m_Layer: 0
   m_Name: StoneDotted
-  m_TagString: Untagged
+  m_TagString: block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,3 +111,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-4771364992317668262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6134040126367710970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d6b66dde70acb4689d3102b13fd7d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockHealth: 20

@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3079572143700543507}
   - component: {fileID: 1053519548457178871}
-  - component: {fileID: 5911854226689620005}
+  - component: {fileID: -8084716608725845754}
+  - component: {fileID: 5266045620074717930}
   m_Layer: 0
   m_Name: BlueTree
-  m_TagString: Untagged
+  m_TagString: block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,16 +85,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &5911854226689620005
-BoxCollider:
+--- !u!114 &-8084716608725845754
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5599336158990316786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d6b66dde70acb4689d3102b13fd7d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockHealth: 20
+  yes: 0
+--- !u!61 &5266045620074717930
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5599336158990316786}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0016191304, y: -0.19006273}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.75102335, y: 0.62807196, z: 0.2}
-  m_Center: {x: 0.004610628, y: -0.18596402, z: 0}
+  m_Size: {x: 0.7335498, y: 0.62517506}
+  m_EdgeRadius: 0

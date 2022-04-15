@@ -31,12 +31,17 @@ public class Movement : MonoBehaviour
     public bool spawnFacingUp;
     public Vector2 facingLeft;
     public Vector2 facingUp;
+
+    public HealthBar healthBar;
     // Start is called before the first frame update
     void Start()
     {
         health = starthp;
         digSpeed = startdig;
         fuel = startfuel;
+
+        healthBar.SetMaxHealth(starthp);
+
 
         facingLeft = new Vector2(-transform.localScale.x, transform.localScale.y);
         facingUp = new Vector2(transform.localScale.x, transform.localScale.y);
@@ -71,7 +76,7 @@ public class Movement : MonoBehaviour
             Debug.Log("" + attackPos);
         }
 
-        if(health <=0)
+        if (health <= 0)
         {
             SceneManager.LoadScene("End");
         }

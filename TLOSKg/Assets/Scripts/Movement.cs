@@ -55,10 +55,6 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(health);
-        Debug.Log(moveSpeed);
-        Debug.Log(digSpeed);
-        Debug.Log(score);
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
 

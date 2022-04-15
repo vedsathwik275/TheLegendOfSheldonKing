@@ -146,16 +146,14 @@ public class Floor
         grid = new Node[sizeX, sizeY];
 
         //Loops through each column then the floor and creates a node
-        for (int y = 0; y < sizeY; y++)
+        for (int y = 0; y < sizeX; y++)
         {
-            for (int x = 0; x < sizeX; x++)
+            for (int x = 0; x < sizeY; x++)
             {
                 //create the actual array or the program will complain
+
                 grid[y, x] = new Node(x, y);
                 //Debugging stuff. Sets type of each node to hi and its coordinate and prints
-                grid[y, x].SetType("hi" + y + x);
-                //Debug.Log(grid[y, x]);
-                //Debug.Log(grid[y, x].type);
                 grid[y, x].SetType("null");
             }
         }
@@ -167,7 +165,7 @@ public class Floor
     //create 4 temporary neighboorrules hashsets 
     //for all possibilities within allPoss set, union possibles of each to the 4 neighboors
     //take nodes ajacent and update possible to be the unions
-    void Propagate(int x, int y)
+    void Propagate(int y, int x)
     {
         HashSet<string> tempUp = new HashSet<string>();
         HashSet<string> tempDown = new HashSet<string>();
@@ -191,9 +189,9 @@ public class Floor
 
         }
         //check to see if ajacent tiles are within bounds first in order up down right left
-        if (y + 1 >= sizeY) { changeup = false; }
+        if (y + 1 >= sizeX) { changeup = false; }
         if (y - 1 < 0) { changedown = false; }
-        if (x + 1 >= sizeX) { changer = false; }
+        if (x + 1 >= sizeY) { changer = false; }
         if (x - 1 < 0) { changel = false; }
         //for each variable, if it is true, go to the node in the respective direction and change its superposition then update ajacency
         if (changeup)
@@ -309,9 +307,9 @@ public class Floor
         Queue<Node> dirty = new Queue<Node>();
         while (complete < totalNodes)
         {
-            for (int y = 0; y < sizeY; y++)
+            for (int y = 0; y < sizeX; y++)
             {
-                for (int x = 0; x < sizeX; x++)
+                for (int x = 0; x < sizeY; x++)
                 {
 
                     //essentially, find a node with a low entropy. If it is lower than current low, clear list of low entropy nodes
@@ -561,9 +559,9 @@ public class WFC : MonoBehaviour
     //This function basically takes the floor class, accesses the grid and picks out every node and instantiates a tile in the node's place based on its label
     public void Paint(Floor floor)
     {
-        for (int y = 0; y < floor.sizeY; y++)
+        for (int y = 0; y < floor.sizeX; y++)
         {
-            for (int x = 0; x < floor.sizeX; x++)
+            for (int x = 0; x < floor.sizeY; x++)
             {
                 Node n = floor.grid[y, x];
                 switch (n.type)

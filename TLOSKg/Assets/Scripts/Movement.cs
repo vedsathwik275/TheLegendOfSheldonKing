@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.Utils;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
-    public float moveSpeed;
+    public float moveSpeed = 8;
     public Rigidbody2D rb;
     public GameObject SpawnPoint;
     public GameObject Drill;
@@ -16,8 +17,8 @@ public class Movement : MonoBehaviour
     public float digSpeed = 0;
     public float score = 0;
     public float fuel = 0;
-    public float starthp;
-    public float startdig;
+    public float starthp = 50;
+    public float startdig = 1;
     public float startfuel;
 
 
@@ -72,6 +73,11 @@ public class Movement : MonoBehaviour
             Vector3 attackPos = transform.position + mouseDir;
             Debug.Log("" + mouseDir);
             Debug.Log("" + attackPos);
+        }
+
+        if(health <=0)
+        {
+            SceneManager.LoadScene("End");
         }
     }
 

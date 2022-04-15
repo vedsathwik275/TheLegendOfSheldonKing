@@ -7,6 +7,7 @@ public class Drill : MonoBehaviour
     public BlockHealth healthDiff;
     public GameObject player;
     public Movement pScript;
+    private bool drillactive = false;
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -18,6 +19,7 @@ public class Drill : MonoBehaviour
 
     void Update()
     {
+        drillactive = Input.GetKey(KeyCode.Space);
         if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             Debug.Log("down");
@@ -29,21 +31,24 @@ public class Drill : MonoBehaviour
     {
         healthDiff = gameObject.GetComponent<BlockHealth>();
         
-        if (other.gameObject.tag == "block")
+        if (drillactive)
         {
-            pScript.health -= other.gameObject.GetComponent<BlockHealth>().damage;
-            other.gameObject.GetComponent<BlockHealth>().blockHealth =  other.gameObject.GetComponent<BlockHealth>().blockHealth - pScript.digSpeed;
-            if(other.gameObject.GetComponent<BlockHealth>().blockHealth <=0)
+            if (other.gameObject.tag == "block")
             {
-                Destroy(other.gameObject);
-                pScript.score += other.gameObject.GetComponent<BlockHealth>().point;
-                pScript.health += other.gameObject.GetComponent<BlockHealth>().hpboost;
-                pScript.digSpeed += other.gameObject.GetComponent<BlockHealth>().dboost;
-                pScript.moveSpeed += other.gameObject.GetComponent<BlockHealth>().sboost;
-            }
-            
-            // Debug.Log(healthDiff.blockHealth);
+                pScript.health -= other.gameObject.GetComponent<BlockHealth>().damage;
+                other.gameObject.GetComponent<BlockHealth>().blockHealth =  other.gameObject.GetComponent<BlockHealth>().blockHealth - pScript.digSpeed;
+                if(other.gameObject.GetComponent<BlockHealth>().blockHealth <=0)
+                {
+                    Destroy(other.gameObject);
+                    pScript.score += other.gameObject.GetComponent<BlockHealth>().point;
+                    pScript.health += other.gameObject.GetComponent<BlockHealth>().hpboost;
+                    pScript.digSpeed += other.gameObject.GetComponent<BlockHealth>().dboost;
+                    pScript.moveSpeed += other.gameObject.GetComponent<BlockHealth>().sboost;
+                }
+                
+                // Debug.Log(healthDiff.blockHealth);
 
+            }
         }
     }
 }

@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
     public float digSpeed = 0;
     public float score = 0;
     public float fuel = 0;
-    public float starthp = 50;
+    public float starthp = 100;
     public float startdig = 1;
     public float startfuel;
 
@@ -33,6 +33,7 @@ public class Movement : MonoBehaviour
     public Vector2 facingUp;
 
     public HealthBar healthBar;
+    public static float totalScore;
     // Start is called before the first frame update
     void Start()
     {
@@ -76,10 +77,13 @@ public class Movement : MonoBehaviour
             Debug.Log("" + attackPos);
         }
 
-        if (health <= 0)
+        if (healthBar.slider.value <= 0)
         {
+            Debug.Log(healthBar.slider.value);
             SceneManager.LoadScene("End");
         }
+
+        totalScore = score;
     }
 
     private void FixedUpdate()

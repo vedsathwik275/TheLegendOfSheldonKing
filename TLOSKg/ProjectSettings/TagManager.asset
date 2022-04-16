@@ -9,6 +9,8 @@ TagManager:
   - ten
   - fifteen
   - block
+  - platform
+  - sceneSwitcher
   layers:
   - Default
   - TransparentFX

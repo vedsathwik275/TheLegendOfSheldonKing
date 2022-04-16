@@ -488,6 +488,7 @@ MonoBehaviour:
   spawnFacingUp: 0
   facingLeft: {x: 0, y: 0}
   facingUp: {x: 0, y: 0}
+  healthBar: {fileID: 1695402411058621426}
 --- !u!50 &4784038514708380546
 Rigidbody2D:
   serializedVersion: 4
@@ -549,7 +550,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthDiff: {fileID: 0}
   player: {fileID: 0}
-  pScript: {fileID: 0}
+  pScript: {fileID: 4784038514708380549}
+  healthUpdate: {fileID: 1695402411058621426}
 --- !u!1 &4784038514728655065
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,6 +953,7 @@ MonoBehaviour:
   healthDiff: {fileID: 0}
   player: {fileID: 0}
   pScript: {fileID: 0}
+  healthUpdate: {fileID: 0}
 --- !u!1 &4784038515526329494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,9 +1046,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 50
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 50
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

@@ -32,6 +32,10 @@ public class PlayerManager : MonoBehaviour
         {
             SceneManager.LoadScene("FifteenByFifteen");
         }
+        if (other.gameObject.tag == "sceneSwitcher")
+        {
+            SceneManager.LoadScene("LevelChooser");
+        }
 
         // if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         // {

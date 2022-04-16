@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 2503044671186317290, guid: 80c9ae79ddf7e0b43b4737bb40a37477, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -124,3 +124,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockHealth: 20
+  yes: 0
+  bname: 
+  point: 0
+  damage: 0
+  dboost: 0
+  sboost: 0
+  hpboost: 0

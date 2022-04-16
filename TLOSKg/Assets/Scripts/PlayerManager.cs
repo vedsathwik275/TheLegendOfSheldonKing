@@ -34,7 +34,7 @@ public class PlayerManager : MonoBehaviour
         }
         if (other.gameObject.tag == "sceneSwitcher")
         {
-            SceneManager.LoadScene("LevelChooser");
+            SceneManager.LoadScene("End");
         }
 
         // if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))

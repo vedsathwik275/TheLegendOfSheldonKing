@@ -29,6 +29,8 @@ public class Node
     public HashSet<string> possibleL;
     public HashSet<string> possibleR;
 
+    
+
     public TemplateKeys cellList;
 
     //constructor, only takes position, everything else can be set with a function or doesn't need to be 
@@ -93,17 +95,44 @@ public class Node
     public void Collapse()
     {
         entropy = allPoss.Count;
+        
+        
+       
+        TemplateKeys weigh = new TemplateKeys();
+        weigh.InitializeCells();
+        List<string> tempArray = new List<string>();
+        foreach (string block in allPoss)
+        {
+            weigh.lastChosen.Add(block);
+            for (int i = 0; i < weigh.cellWeights[block]; i++)
+            {
+                tempArray.Add(block);
+            }
+        }
+        if (tempArray.Count <= 0)
+        {
+            tempArray = weigh.lastChosen;
+        }
+        int rnd = Random.Range(0, tempArray.Count);
+         Debug.Log("Type Pick");
+        Debug.Log(rnd);
         Debug.Log("Type Pick Count");
         Debug.Log(allPoss.Count);
-        int rnd = Random.Range(0, entropy);
-        Debug.Log("Type Pick");
-        Debug.Log(rnd);
-        List<string> tempArray = new List<string>(allPoss);
         type = tempArray[rnd];
         collapsed = true;
         allPoss.Clear();
         allPoss.Add(type);
         entropy = allPoss.Count;
+        weigh.lastChosen.Clear();
+        foreach (string bloc in weigh.cellTypes[type].possibleUp)
+        {
+            Debug.Log("thing inside possibleup");
+            Debug.Log(bloc);
+            for (int p = 0; p< weigh.cellWeights[bloc]; p++)
+            {
+                weigh.lastChosen.Add(bloc);
+            }
+        }
 
     }
 }
@@ -352,16 +381,48 @@ public class TemplateKeys
     public Dictionary<string, float> cellWeights = new Dictionary<string, float>();
     public Dictionary<string, TileTemplate> cellTypes = new Dictionary<string, TileTemplate>();
 
-    public float voidWeight, stoneWeight, hardStoneWeight, lavaWeight, dirtWeight;
+    public float VW = 0;
+    public float SW = 100;
+    public float HSW = 0;
+    public float LW = 0;
+    public float DW = 0;
+    public float TW = 50;
+    public float DMW = 0;
+    public float PW = 0;
+    public float EW = 0;
+    public float BLTW = 0;
+    public float WTW = 0;
+    public float BTW = 0;
+    public float KSW = 0;
+    public float SDW = 0;
+    public float HHSW = 0;
+    public float GW = 0;
+
+    public List<string> lastChosen = new List<string>();
+
+    
 
     public void InitializeCells()
     {
+
+        
         //probability weights
-        cellWeights.Add("voidTile", voidWeight);
-        cellWeights.Add("stoneTile", stoneWeight);
-        cellWeights.Add("hardStoneTile", hardStoneWeight);
-        cellWeights.Add("lavaTile", lavaWeight);
-        cellWeights.Add("dirtTile", dirtWeight);
+        cellWeights.Add("voidTile", VW);
+        cellWeights.Add("stoneTile", SW);
+        cellWeights.Add("hardStoneTile", HSW);
+        cellWeights.Add("lavaTile", LW);
+        cellWeights.Add("dirtTile", DW);
+        cellWeights.Add("TNT", TW);
+        cellWeights.Add("diamondTile", DMW);
+        cellWeights.Add("plantTile", PW);
+        cellWeights.Add("emeraldTile", EW);
+        cellWeights.Add("blackTreeTile", BLTW);
+        cellWeights.Add("whiteTreeTile", WTW);
+        cellWeights.Add("blueTreeTile", BTW);
+        cellWeights.Add("keyStoneTile", KSW);
+        cellWeights.Add("stoneDotTile", SDW);
+        cellWeights.Add("hStoneTile", HHSW);
+        cellWeights.Add("goldTile", GW);
 
         string[] allStone = { "stoneTile", "hardStoneTile", "dirtTile", "diamondTile", "plantTile", "emeraldTile", "blackTreeTile", "whiteTreeTile", "blueTreeTile", "keyStoneTile", "stoneDotTile", "hStoneTile", "goldTile" };   //stone
         TileTemplate stoneTile = new TileTemplate
@@ -408,7 +469,7 @@ public class TemplateKeys
          new HashSet<string>(allDirt));
         cellTypes.Add(dirtTile.name, dirtTile);
 
-        string[] allTNT = { "hardStoneTile", "lavalTile", "TNT", "voidTile" };   //tnt
+        string[] allTNT = { "hardStoneTile", "lavaTile", "TNT", "voidTile" };   //tnt
         TileTemplate tntTile = new TileTemplate
         ("TNT",
          new HashSet<string>(allTNT),
@@ -517,6 +578,8 @@ public class WFC : MonoBehaviour
     public int tempfloory;
     public bool generated = false;
     public Floor level1;
+
+
 
     public GameObject inputx;
     public GameObject inputy;

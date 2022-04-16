@@ -139,7 +139,7 @@ public class BlockHealth : MonoBehaviour
             case "TNT(Clone)":
                 blockHealth = 30;
                 point = 500;
-                damage = 2;
+                damage = 0;
                 dboost = 0;
                 sboost = 0;
                 hpboost = -25;

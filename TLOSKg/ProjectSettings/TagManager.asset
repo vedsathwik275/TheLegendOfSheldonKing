@@ -9,6 +9,7 @@ TagManager:
   - ten
   - fifteen
   - block
+  - platform
   layers:
   - Default
   - TransparentFX

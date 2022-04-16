@@ -7,7 +7,10 @@ public class Drill : MonoBehaviour
     public BlockHealth healthDiff;
     public GameObject player;
     public Movement pScript;
+    public HealthBar healthUpdate;
     private bool drillactive = false;
+
+    
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -20,24 +23,28 @@ public class Drill : MonoBehaviour
     void Update()
     {
         drillactive = Input.GetKey(KeyCode.Space);
-        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
-        {
-            Debug.Log("down");
-        }
+        // if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+        // {
+        //     Debug.Log("down");
+        // }
+
+
 
     }
 
     private void OnCollisionStay2D(Collision2D other)
     {
         healthDiff = gameObject.GetComponent<BlockHealth>();
-        
+        //healthUpdate = player.GetComponent<HealthBar>();
+
         if (drillactive)
         {
             if (other.gameObject.tag == "block")
             {
                 pScript.health -= other.gameObject.GetComponent<BlockHealth>().damage;
-                other.gameObject.GetComponent<BlockHealth>().blockHealth =  other.gameObject.GetComponent<BlockHealth>().blockHealth - pScript.digSpeed;
-                if(other.gameObject.GetComponent<BlockHealth>().blockHealth <=0)
+                healthUpdate.SetHealth(pScript.health);
+                other.gameObject.GetComponent<BlockHealth>().blockHealth = other.gameObject.GetComponent<BlockHealth>().blockHealth - pScript.digSpeed;
+                if (other.gameObject.GetComponent<BlockHealth>().blockHealth <= 0)
                 {
                     Destroy(other.gameObject);
                     pScript.score += other.gameObject.GetComponent<BlockHealth>().point;
@@ -45,10 +52,18 @@ public class Drill : MonoBehaviour
                     pScript.digSpeed += other.gameObject.GetComponent<BlockHealth>().dboost;
                     pScript.moveSpeed += other.gameObject.GetComponent<BlockHealth>().sboost;
                 }
-                
+
                 // Debug.Log(healthDiff.blockHealth);
 
             }
+
+            if (other.gameObject.tag == "platform")
+            {
+                Destroy(other.gameObject);
+                Debug.Log("Platform Destroyed");
+            }
         }
     }
+
+
 }

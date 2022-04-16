@@ -23,7 +23,7 @@ public class BlockHealth : MonoBehaviour
                 blockHealth = 1;
                 point = 10;
                 damage = 0;
-                dboost = .1f;
+                dboost = 1f;
                 sboost = 1;
                 hpboost = 10;
                 break;
@@ -32,7 +32,7 @@ public class BlockHealth : MonoBehaviour
                 blockHealth = 1;
                 point = 10;
                 damage = 0;
-                dboost = 1;
+                dboost = 2;
                 sboost = 1;
                 hpboost = 20;
                 break;
@@ -158,7 +158,7 @@ public class BlockHealth : MonoBehaviour
                 blockHealth = 1;
                 point = 10;
                 damage = 0;
-                dboost = .5f;
+                dboost = 3;
                 sboost = .5f;
                 hpboost = 15;
                 break;

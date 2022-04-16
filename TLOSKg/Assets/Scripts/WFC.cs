@@ -382,21 +382,21 @@ public class TemplateKeys
     public Dictionary<string, TileTemplate> cellTypes = new Dictionary<string, TileTemplate>();
 
     public float VW = 0;
-    public float SW = 100;
-    public float HSW = 0;
-    public float LW = 0;
-    public float DW = 0;
-    public float TW = 50;
-    public float DMW = 0;
+    public float SW = 50;
+    public float HSW = 20;
+    public float LW = 20;
+    public float DW = 100;
+    public float TW = 20;
+    public float DMW = 30;
     public float PW = 0;
-    public float EW = 0;
-    public float BLTW = 0;
-    public float WTW = 0;
-    public float BTW = 0;
+    public float EW = 40;
+    public float BLTW = 20;
+    public float WTW = 20;
+    public float BTW = 20;
     public float KSW = 0;
-    public float SDW = 0;
-    public float HHSW = 0;
-    public float GW = 0;
+    public float SDW = 30;
+    public float HHSW = 40;
+    public float GW = 50;
 
     public List<string> lastChosen = new List<string>();
 

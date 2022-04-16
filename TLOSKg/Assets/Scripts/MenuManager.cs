@@ -18,14 +18,14 @@ public class MenuManager : MonoBehaviour
         {
             SceneManager.LoadScene("LevelChooser");
         }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            SceneManager.LoadScene("Menu");
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            SceneManager.LoadScene("Directions");
-        }
+        // if (Input.GetKeyDown(KeyCode.W))
+        // {
+        //     SceneManager.LoadScene("Menu");
+        // }
+        // if (Input.GetKeyDown(KeyCode.D))
+        // {
+        //     SceneManager.LoadScene("Directions");
+        // }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Debug.Log("Quit");

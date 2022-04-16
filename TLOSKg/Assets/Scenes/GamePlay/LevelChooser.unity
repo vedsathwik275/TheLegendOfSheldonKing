@@ -634,7 +634,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525773501}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.9779043, y: 5.674518, z: -10}
+  m_LocalPosition: {x: -7.9779043, y: 10.44, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1385,7 +1385,7 @@ GameObject:
   - component: {fileID: 1255241683}
   m_Layer: 0
   m_Name: fifteen by
-  m_TagString: Untagged
+  m_TagString: fifteen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5959,7 +5959,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.777448, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5976,7 +5976,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1527395400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.9779043, y: 5.674518, z: -10}
+  m_LocalPosition: {x: -7.9779043, y: 10.44, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 547301714}
@@ -6057,7 +6057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4784038514708380544, guid: 7141f5aec23c6204ab7058e11a3feaf9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.674518
+      value: 10.44
       objectReference: {fileID: 0}
     - target: {fileID: 4784038514708380544, guid: 7141f5aec23c6204ab7058e11a3feaf9, type: 3}
       propertyPath: m_LocalPosition.z
